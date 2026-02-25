@@ -1,17 +1,17 @@
-﻿"""Centralised icon factory — deep blue-gray palette."""
+﻿"""Centralised icon factory — vibrant modern palette."""
 from __future__ import annotations
 
 import qtawesome as qta
 from PyQt6.QtGui import QIcon
 
-# ── Palette ──
-_WHITE      = "#d0d4e0"   # primary text
-_DIM        = "#6b7394"   # muted / secondary
-_BLUE       = "#5b8af5"   # accent
-_BLUE_SOFT  = "#4070c8"   # calmer accent
-_GREEN      = "#4caf82"   # success / confirm
-_RED        = "#e85577"   # danger
-_ORANGE     = "#d4915c"   # warm accent
+# ── Palette (Modern Vibrant) ──
+_WHITE      = "#f8fafc"   # Яркий белый для текста
+_DIM        = "#64748b"   # Slate-500 для второстепенных иконок
+_BLUE       = "#3b82f6"   # Яркий синий (Primary)
+_BLUE_SOFT  = "#60a5fa"   # Более мягкий синий
+_GREEN      = "#10b981"   # Emerald-500 (Успех)
+_RED        = "#f43f5e"   # Rose-500 (Опасность)
+_ORANGE     = "#f59e0b"   # Amber-500 (Акцент)
 
 
 def _ic(name: str, color: str = _WHITE, **kw) -> QIcon:
@@ -19,7 +19,7 @@ def _ic(name: str, color: str = _WHITE, **kw) -> QIcon:
 
 
 # ── Tab icons ──
-def file_word():     return _ic("fa5s.file-alt",       _BLUE_SOFT)
+def file_word():     return _ic("fa5s.file-alt",       _BLUE)
 def file_code():     return _ic("fa5s.code",           _GREEN)
 def chart_bar():     return _ic("fa5s.layer-group",    _ORANGE)
 

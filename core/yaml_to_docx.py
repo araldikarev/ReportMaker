@@ -69,7 +69,15 @@ def build_docx_from_yaml(
             src = blk.get("src")
             if not src:
                 continue
-            ip = _ensure_img(base / src, str(src))
+
+            src_str = str(src).lstrip("/\\")
+            src_path = Path(src_str)
+
+            if src_path.is_absolute():
+                ip = _ensure_img(src_path, str(src))
+            else:
+                ip = _ensure_img(base / src_path, str(src))
+
             p = doc.add_paragraph()
             s = _style_ok(doc, blk.get("style"))
             if s:
